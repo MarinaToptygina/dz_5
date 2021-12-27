@@ -1,19 +1,27 @@
 #include<iostream>
-#include<sstream>
+
 #include<string>
 using namespace std;
 
-int main() {
-	int sum = 0, n;
-	string str;
-	cout << "String:\n";
-	getline(cin, str);
-
-	stringstream ss(str);
-	while (ss >> n) {
-		sum += n;
-
+int sum(char s[]) {
+	int size=100;
+	cout <<"numeric expression : ";
+	int sum = 0;
+	int p = 1;
+	int index = 0;
+	cin.getline(s, size);
+	for (int i = 0; i < strlen(s); i++){
+		if (s[i] != '+' && (i == 0 || s[i - 1] =='+')) {
+			sum += atoi(s + index);
+		}
+		if (s[i] == '+') index = i + 1;
 	}
-	cout << "sum = " << sum << "\n";
+	cout << "Summa : " << sum << endl;
+	return sum;
+}
+
+int maim(){
+	char expression[100];
+	sum(expression);
 	return 0;
 }
