@@ -20,7 +20,7 @@ int sum(char s[]) {
 	return sum;
 }
 
-int maim(){
+int main(){
 	char expression[100];
 	sum(expression);
 	return 0;
